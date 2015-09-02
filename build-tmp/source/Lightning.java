@@ -24,27 +24,27 @@ int endY = 150;
 public void setup()
 {
 
-	strokeWeight(5);
+	strokeWeight(1);
+	fill(255, 255, 255);
     size(300,300);
+    frameRate(120);
 }
 public void draw()
 {
-	background(0,0,0);
-	stroke((int)(Math.random() * 255),(int)(Math.random() * 255),(int)(Math.random() * 255));
-	line(startX, startY, endX, endY);
-	while(mousePressed)
+	
+	background(0, 0, 0);
+
+	//line(startX, startY, endX, endY);
+	while(startX < 300)
 	{
 
+		stroke((int)(Math.random() * 255),(int)(Math.random() * 255),(int)(Math.random() * 255));
 		startX = endX;
 		startY = endY;
 		endX = startX + (int)(Math.random() * 10);
 		endY = startY + (int)(Math.random() * 19 - 9);
 		line(startX, startY, endX, endY);
-		startX = endX;
-		startY = endY;
-
-		
-
+		line(startY, startX, endY, endX);
 
 
 
@@ -53,15 +53,19 @@ public void draw()
 	
 }
 public void mousePressed()
+
 {
+	
+	
+	startX = 0;
+	startY = 150;
+	endX = 0;
+	endY = 150;
+		
 	redraw();
+	
 
 }
-//while(startX < 300)
-	//{
-	//	startX = (int)(Math.random() * 10);
-	//	startX = startX + startX;
-	//}
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Lightning" };
     if (passedArgs != null) {
