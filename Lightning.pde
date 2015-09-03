@@ -11,13 +11,13 @@ void setup()
 	strokeWeight(1);
 	fill(255, 255, 255);
     size(300,300);
-    frameRate(120);
+
 }
 void draw()
 {
 	
 	background(0, 0, 0);
-
+	
 	//line(startX, startY, endX, endY);
 	while(startX < 300)
 	{
@@ -29,6 +29,10 @@ void draw()
 		endY = startY + (int)(Math.random() * 19 - 9);
 		line(startX, startY, endX, endY);
 		line(startY, startX, endY, endX);
+		stroke(35);
+		line(startY+50, startX-20, endX, endY);
+		line(startX+50, startY-20, endX, endY);
+
 
 
 
