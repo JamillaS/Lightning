@@ -34,7 +34,6 @@ public void draw()
 	
 	background(0, 0, 0);
 	
-	//line(startX, startY, endX, endY);
 	while(startX < 300)
 	{
 
@@ -45,7 +44,8 @@ public void draw()
 		endY = startY + (int)(Math.random() * 19 - 9);
 		line(startX, startY, endX, endY);
 		line(startY, startX, endY, endX);
-		stroke(35);
+		//line((int)(Math.random() * 300 + startX), startX, endY, endY);
+		stroke(30);
 		line(startY+50, startX-20, endX, endY);
 		line(startX+50, startY-20, endX, endY);
 
